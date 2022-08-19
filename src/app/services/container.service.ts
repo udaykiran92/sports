@@ -1,0 +1,367 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, map } from 'rxjs';
+@Injectable({
+  providedIn: 'root'
+})
+export class ContainerService {
+  public cartItemList: any=[]
+  public productList = new BehaviorSubject<any>([]) ;
+  public search = new BehaviorSubject<string>("");
+
+  constructor() { }
+  getProducts() {
+     return this.productList.asObservable();
+    
+  }
+  setProducts(product:any){
+  this.cartItemList.push(product);
+  this.productList.next(product);
+  }
+  addToCart(product:any){
+    this.cartItemList.push(product);
+    this.productList.next(this.cartItemList);
+    this.getTotalPrice();
+    console.log(this.cartItemList);
+  }
+  getTotalPrice() : number {
+    let grandTotal=0;
+    this.cartItemList.map((a:any)=>{
+      grandTotal += a.total;
+    })
+    return grandTotal;
+  }
+removeCartItem(product:any){
+  this.cartItemList.map((a:any , index:any)=>{
+    if(product.id===a.id){
+      this.cartItemList.splice(index,1)
+    }
+  })
+  this.productList.next(this.cartItemList);
+}
+
+removeAllCart(){
+  this.cartItemList =[];
+  this.productList.next(this.cartItemList);
+}
+
+
+
+
+
+  playstore=[
+    {
+      
+      image: 'assets/images/barbell set.jpg',
+      section: "gym",
+      id: 1,
+      name: 'Barbell',
+      desc: 'The best muscle increaser',
+      price: '700',
+    },
+    {
+      
+      image: 'assets/images/dumbellsets.png',
+      section: "gym",
+      id: 2,
+      name: 'Dumbellsets',
+      desc: 'Good to improve muscles',
+      price: '500',
+    },
+    {
+      
+      image: 'assets/images/grip.jpg',
+      section: 'gym',
+      id: 3,
+      name: 'Grips',
+      desc: 'Enhances muscle power',
+      price: '200',
+    },
+    {
+      
+      image: "../image/punchbag.jpg",
+      section: 'wrist',
+      id: 7,
+      name: 'punchbag',
+      desc: 'Good for wrestlers and boxers',
+      price: '1200',
+    },
+       {
+    image: "../image/row-machine.jpg",
+    section: 'Full-body',
+    id: 8,
+    name: "Row-machine",
+    desc: 'For hand-power and muscle power',
+    price: '1200',
+  },
+  {
+      
+    image: "../image/spinbike.jpg",
+    section: 'Full-body',
+    id: 9,
+    name: "Spinbike",
+    desc: "Boosts your stamina and cardio capacity",
+    price: '1200',
+  },
+
+    {
+      
+      image: "../image/elliptical.jpg",
+      section: 'Muscle',
+      id: 3,
+      name: 'Ellipticals',
+      desc: 'Boosts your stamina and cardio capacity.',
+      price: '5000',
+    },
+    {
+      
+      image: "../image/treadmill.jpg",
+      section: 'Full-body',
+      id: 10,
+      name: "Tredmill",
+      desc: "It's great for heart,lungs & builds power and endurance.",
+      price: '1200',
+    },
+
+    {
+ image:'assets/images/ckit.png',
+  section:'outdoor',
+  id:1,
+  name:'cricketkit',
+  description:'the complete cricket kit for the player',
+  price:"10000",
+},
+{
+image:'assets/images/vball.png',
+section:'outdoor',
+id:2,
+name:'volleyball',
+description:'hit me hard yar',
+price:800,
+},
+{
+image:'assets/images/vbn.jpg',
+section:'outdoor',
+id:3,
+name:'volleyballnet',
+description:'synthetic fibered net which lasts long',
+price:500,   
+},
+{
+  image:'assets/images/basball.jpg',
+  section:'outdoor',
+  id:4,
+  name:'basketball',
+  description:'hard to dribble but good to get points',
+  price:1000,
+},
+{
+  image:'assets/images/cricketbats.png',
+  section:'outdoor',
+  id:5,
+  name:'cricketbats',
+  description:'best bats for best players',
+  price:1500, 
+},
+{
+  image:'assets/images/shuttlebat.jpg',
+  section:'outdoor',
+  id:6,
+  name:'shuttlebat',
+  description:'strings which are as powerfull as your nerves',
+  price:700,
+},
+{
+  image:'assets/images/fscocks.jpg',
+  section:'outdoor',
+  id:7,
+  name:'feathercocks',
+  description:'fights with the air adn never ending partner',
+  price:50,
+},
+{
+  image:'assets/images/fscocks.jpg',
+  section:'outdoor',
+  id:8,
+  name:'feathercocks',
+  description:'fights with the air adn never ending partner',
+  price:50,
+},
+{
+  image:'assets/images/fscocks.jpg',
+  section:'outdoor',
+  id:9,
+  name:'feathercocks',
+  description:'fights with the air adn never ending partner',
+  price:50,
+},
+{
+  image:'assets/images/fscocks.jpg',
+  section:'outdoor',
+  id:10,
+  name:'feathercocks',
+  description:'fights with the air adn never ending partner',
+  price:50,
+},
+{
+  image:'assets/images/ludo.webp',
+  section:'indoor',
+  id:11,
+  name:'Ludo',
+  description:'Unites everyone',
+  price:50,
+},
+{
+  image:'assets/images/snake-ladder.jpg',
+  section:'indoor',
+  id:12,
+  name:'snake-ladder',
+  description:'have fun with your friends',
+  price:500,
+},
+{
+  image:'assets/images/uno.jpg',
+  section:'indoor',
+  id:13,
+  name:'uno cards',
+  description:'have fun and take revenge on your friend',
+  price:50,
+},
+{
+  image:'assets/images/darts.png',
+  section:'indoor',
+  id:14,
+  name:'darts',
+  description:'keeps your mind work faster',
+  price:50,
+},
+{
+  image:'assets/images/chess.jpg',
+  section:'indoor',
+  id:15,
+  name:'chess',
+  description:'improves  your thinking power in critical situations',
+  price:50,
+},
+{
+  image:'assets/images/caroms.jpg',
+  section:'indoor',
+  id:16,
+  name:'caromboard',
+  description:'improves your motor skills',
+  price:50,
+},
+{
+  image:'assets/images/bussiness.jpg',
+  section:'indoor',
+  id:17,
+  name:'bussiness',
+  description:'keeps everyone busy ',
+  price:50,
+},
+{
+  image:'assets/images/bussiness.jpg',
+  section:'indoor',
+  id:18,
+  name:'bussiness',
+  description:'keeps everyone busy ',
+  price:50,
+},
+{
+  image:'assets/images/bussiness.jpg',
+  section:'indoor',
+  id:19,
+  name:'bussiness',
+  description:'keeps everyone busy ',
+  price:50,
+},
+{
+  image:'assets/images/bussiness.jpg',
+  section:'indoor',
+  id:20,
+  name:'bussiness',
+  description:'keeps everyone busy ',
+  price:50,
+},
+{
+  image:'assets/images/powerade.png',
+  section:'drinks',
+  id:21,
+  name:'powerdrink',
+  description:'cautious for your health',
+  price:500,
+},
+{
+  image:'assets/images/ccnut.webp',
+  section:'drinks',
+  id:22,
+  name:'cocconut water',
+  description:'natural drinks',
+  price:150,
+},
+{
+  image:'assets/images/gatorade.webp',
+  section:'drinks',
+  id:23,
+  name:'gatoride',
+  description:'powerfull drink for powerfull people',
+  price:1000,
+},
+{
+  image:'assets/images/combopack.jfif',
+  section:'drinks',
+  id:24,
+  name:'different drinks combo',
+  description:'combopack of energy',
+  price:2000,
+},
+{
+  image:'assets/images/bdy.png',
+  section:'drinks',
+  id:25,
+  name:'Bodyarmor',
+  description:'best drink for strength',
+  price:1500,
+},
+{
+  image:'assets/images/proshake.jfif',
+  section:'drinks',
+  id:26,
+  name:'proteinshek',
+  description:'powerfull proteins help you work more',
+  price:2000,
+},
+{
+  image:'assets/images/oceandrink.webp',
+  section:'drinks',
+  id:27,
+  name:'oceandrink',
+  description:'instant energy giver',
+  price:900,
+},
+{
+  image:'assets/images/oceandrink.webp',
+  section:'drinks',
+  id:28,
+  name:'oceandrink',
+  description:'instant energy giver',
+  price:900,
+},
+{
+  image:'assets/images/oceandrink.webp',
+  section:'drinks',
+  id:29,
+  name:'oceandrink',
+  description:'instant energy giver',
+  price:900,
+},
+{
+  image:'assets/images/oceandrink.webp',
+  section:'drinks',
+  id:30,
+  name:'oceandrink',
+  description:'instant energy giver',
+  price:900,
+}
+
+]
+}

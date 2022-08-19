@@ -1,0 +1,46 @@
+ .card-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .25rem;
+} 
+.game img {
+    width:75%;
+    height: 75%;
+}
+.game{
+    margin: 2px 10px;
+    text-align: center;
+}
+.game a:hover {
+    color: green;
+}
+.card img{
+    width: 100%;
+    height: 75%;
+    margin-bottom: 15%;
+    animation: 0.3s ease-in-out;
+}
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.card{
+  margin: 10px;
+
+}
+.btn{
+  margin-left: 3%;
+}
+.container-fluid {
+  background-color: rgba(22, 22, 21, 0.322);
+}
+.container-fluid {
+  background-image: url("/sports/src/assets/images/bgm.webp");
+  background-repeat: no-repeat;
+} 
