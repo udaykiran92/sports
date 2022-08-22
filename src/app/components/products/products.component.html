@@ -14,18 +14,18 @@
     </div>
     <div class="container d-flex">
         <div class="game">
-            <a (click)="filter('drinks')"><img src="assets/images/drinking.webp" alt=""><h6>Drinks</h6></a>
+            <a (click)="filter('drinks')"><img src="assets/images/power.gif" alt=""><h6>Drinks</h6></a>
         </div>
     </div>
     
     <div class="container d-flex">
         <div class="game">
-            <a (click)="filter('gym')"><img src="assets/images/drinking.webp" alt=""><h6>Gym</h6></a>
+            <a (click)="filter('gym')"><img src="assets/images/gym.jpg" alt=""><h6>Gym</h6></a>
         </div>
     </div>
     <div class="container d-flex">
         <div class="game">
-            <a><img src="assets/images/drinking.webp" alt=""><button routerLink="Login" class="btn btn-primary">Login</button></a>
+            <a><img src="assets/images/lgn.png" alt=""><button routerLink="Login" class="btn btn-primary">Login</button></a>
         </div>
     </div>
     
@@ -41,6 +41,8 @@
                     <h5>{{item.name}}</h5>
                     <p style="white-space: nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{item.description}}</p>
                     <p><strong>Price:</strong>{{item.price | currency:'INR'}}</p>
+            <p><button type="button" class="btn" (click)="inc(item)"><i class="fa fa-plus"></i></button>{{item.quantity}}<button type="button" class="btn"(click)="dec(item)"><i class="fa fa-minus"></i></button></p>
+
                     <p>
                         <span id="hearticon"><i ng-style="myStyle"  class="fa-solid fa-heart"></i></span>
                         <!-- ng-click="heart($event)"  -->

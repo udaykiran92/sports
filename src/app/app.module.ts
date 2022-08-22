@@ -10,6 +10,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { FilterPipe } from './shared/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     LoginPageComponent,
     FilterPipe,
-    FooterComponent
+    FooterComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

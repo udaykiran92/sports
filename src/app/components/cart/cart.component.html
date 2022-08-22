@@ -25,16 +25,16 @@
             <td style="width:25%;">{{item.description}}</td>
             <td style="width: 12%;">{{item.section}}</td>
             <td>{{item.price}}</td>
-            <td>{{item.quantity}}</td>
-            <td>{{item.total}}</td>
+            <td><button type="button" class="btn" (click)="inc(item)"><i class="fa fa-plus"></i></button>{{item.quantity}}<button type="button" class="btn" (click)="dec(item)"><i class="fa fa-minus"></i></button></td>
+            <td>{{item.price*item.quantity}}</td>
             <td><button  (click)="removeCartItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
         <tr>
             <td colspan="5"></td>
             <td><button  (click)="removeAllCart()" class="btn btn-danger">Empty Cart</button></td>
             <td><button routerLink="" class="btn btn-primary">ShopMore</button></td>
-            <td><button class="btn btn-success">Checkout</button></td>
-            <td><strong>Grand Total:{{grandTotal | currency :'INR'}}</strong></td>
+            <td><button  routerLink="/Login" class="btn btn-success">Checkout</button></td>
+            <td><strong>Grand Total:{{ grandTotal | currency :'INR'}}</strong></td>
             
         </tr>
     </tbody>

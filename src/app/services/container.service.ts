@@ -6,7 +6,7 @@ import { BehaviorSubject, map } from 'rxjs';
 export class ContainerService {
   public cartItemList: any=[]
   public productList = new BehaviorSubject<any>([]) ;
-  public search = new BehaviorSubject<string>("");
+  public search = new BehaviorSubject<string>(""); 
 
   constructor() { }
   getProducts() {
@@ -20,13 +20,13 @@ export class ContainerService {
   addToCart(product:any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
-    this.getTotalPrice();
+    this.TotalPrice();
     console.log(this.cartItemList);
   }
-  getTotalPrice() : number {
+  TotalPrice() : number {
     let grandTotal=0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
+      grandTotal += a.total *a.quantity;
     })
     return grandTotal;
   }
@@ -43,8 +43,16 @@ removeAllCart(){
   this.cartItemList =[];
   this.productList.next(this.cartItemList);
 }
+inc(item:any){
+// console.log(item);
+item.quantity+=1;
+}
+dec(item:any) {
+  if(item.quantity!=1){  // console.log(item);
+item.quantity-=1;
+}
 
-
+}
 
 
 
@@ -125,7 +133,7 @@ removeAllCart(){
     {
  image:'assets/images/ckit.png',
   section:'outdoor',
-  id:1,
+  id:11,
   name:'cricketkit',
   description:'the complete cricket kit for the player',
   price:"10000",
@@ -133,7 +141,7 @@ removeAllCart(){
 {
 image:'assets/images/vball.png',
 section:'outdoor',
-id:2,
+id:12,
 name:'volleyball',
 description:'hit me hard yar',
 price:800,
@@ -141,7 +149,7 @@ price:800,
 {
 image:'assets/images/vbn.jpg',
 section:'outdoor',
-id:3,
+id:13,
 name:'volleyballnet',
 description:'synthetic fibered net which lasts long',
 price:500,   
@@ -149,7 +157,7 @@ price:500,
 {
   image:'assets/images/basball.jpg',
   section:'outdoor',
-  id:4,
+  id:14,
   name:'basketball',
   description:'hard to dribble but good to get points',
   price:1000,
@@ -157,7 +165,7 @@ price:500,
 {
   image:'assets/images/cricketbats.png',
   section:'outdoor',
-  id:5,
+  id:15,
   name:'cricketbats',
   description:'best bats for best players',
   price:1500, 
@@ -165,7 +173,7 @@ price:500,
 {
   image:'assets/images/shuttlebat.jpg',
   section:'outdoor',
-  id:6,
+  id:16,
   name:'shuttlebat',
   description:'strings which are as powerfull as your nerves',
   price:700,
@@ -173,7 +181,7 @@ price:500,
 {
   image:'assets/images/fscocks.jpg',
   section:'outdoor',
-  id:7,
+  id:17,
   name:'feathercocks',
   description:'fights with the air adn never ending partner',
   price:50,
@@ -181,7 +189,7 @@ price:500,
 {
   image:'assets/images/fscocks.jpg',
   section:'outdoor',
-  id:8,
+  id:18,
   name:'feathercocks',
   description:'fights with the air adn never ending partner',
   price:50,
@@ -189,7 +197,7 @@ price:500,
 {
   image:'assets/images/fscocks.jpg',
   section:'outdoor',
-  id:9,
+  id:19,
   name:'feathercocks',
   description:'fights with the air adn never ending partner',
   price:50,
@@ -197,7 +205,7 @@ price:500,
 {
   image:'assets/images/fscocks.jpg',
   section:'outdoor',
-  id:10,
+  id:20,
   name:'feathercocks',
   description:'fights with the air adn never ending partner',
   price:50,
@@ -205,7 +213,7 @@ price:500,
 {
   image:'assets/images/ludo.webp',
   section:'indoor',
-  id:11,
+  id:21,
   name:'Ludo',
   description:'Unites everyone',
   price:50,
@@ -213,7 +221,7 @@ price:500,
 {
   image:'assets/images/snake-ladder.jpg',
   section:'indoor',
-  id:12,
+  id:22,
   name:'snake-ladder',
   description:'have fun with your friends',
   price:500,
@@ -221,7 +229,7 @@ price:500,
 {
   image:'assets/images/uno.jpg',
   section:'indoor',
-  id:13,
+  id:23,
   name:'uno cards',
   description:'have fun and take revenge on your friend',
   price:50,
@@ -229,7 +237,7 @@ price:500,
 {
   image:'assets/images/darts.png',
   section:'indoor',
-  id:14,
+  id:24,
   name:'darts',
   description:'keeps your mind work faster',
   price:50,
@@ -237,7 +245,7 @@ price:500,
 {
   image:'assets/images/chess.jpg',
   section:'indoor',
-  id:15,
+  id:25,
   name:'chess',
   description:'improves  your thinking power in critical situations',
   price:50,
@@ -245,7 +253,7 @@ price:500,
 {
   image:'assets/images/caroms.jpg',
   section:'indoor',
-  id:16,
+  id:26,
   name:'caromboard',
   description:'improves your motor skills',
   price:50,
@@ -253,7 +261,7 @@ price:500,
 {
   image:'assets/images/bussiness.jpg',
   section:'indoor',
-  id:17,
+  id:27,
   name:'bussiness',
   description:'keeps everyone busy ',
   price:50,
@@ -261,7 +269,7 @@ price:500,
 {
   image:'assets/images/bussiness.jpg',
   section:'indoor',
-  id:18,
+  id:28,
   name:'bussiness',
   description:'keeps everyone busy ',
   price:50,
@@ -269,7 +277,7 @@ price:500,
 {
   image:'assets/images/bussiness.jpg',
   section:'indoor',
-  id:19,
+  id:29,
   name:'bussiness',
   description:'keeps everyone busy ',
   price:50,
@@ -277,7 +285,7 @@ price:500,
 {
   image:'assets/images/bussiness.jpg',
   section:'indoor',
-  id:20,
+  id:30,
   name:'bussiness',
   description:'keeps everyone busy ',
   price:50,
@@ -285,7 +293,7 @@ price:500,
 {
   image:'assets/images/powerade.png',
   section:'drinks',
-  id:21,
+  id:31,
   name:'powerdrink',
   description:'cautious for your health',
   price:500,
@@ -293,7 +301,7 @@ price:500,
 {
   image:'assets/images/ccnut.webp',
   section:'drinks',
-  id:22,
+  id:32,
   name:'cocconut water',
   description:'natural drinks',
   price:150,
@@ -301,7 +309,7 @@ price:500,
 {
   image:'assets/images/gatorade.webp',
   section:'drinks',
-  id:23,
+  id:33,
   name:'gatoride',
   description:'powerfull drink for powerfull people',
   price:1000,
@@ -309,7 +317,7 @@ price:500,
 {
   image:'assets/images/combopack.jfif',
   section:'drinks',
-  id:24,
+  id:34,
   name:'different drinks combo',
   description:'combopack of energy',
   price:2000,
@@ -317,7 +325,7 @@ price:500,
 {
   image:'assets/images/bdy.png',
   section:'drinks',
-  id:25,
+  id:35,
   name:'Bodyarmor',
   description:'best drink for strength',
   price:1500,
@@ -325,7 +333,7 @@ price:500,
 {
   image:'assets/images/proshake.jfif',
   section:'drinks',
-  id:26,
+  id:36,
   name:'proteinshek',
   description:'powerfull proteins help you work more',
   price:2000,
@@ -333,7 +341,7 @@ price:500,
 {
   image:'assets/images/oceandrink.webp',
   section:'drinks',
-  id:27,
+  id:37,
   name:'oceandrink',
   description:'instant energy giver',
   price:900,
@@ -341,7 +349,7 @@ price:500,
 {
   image:'assets/images/oceandrink.webp',
   section:'drinks',
-  id:28,
+  id:38,
   name:'oceandrink',
   description:'instant energy giver',
   price:900,
@@ -349,7 +357,7 @@ price:500,
 {
   image:'assets/images/oceandrink.webp',
   section:'drinks',
-  id:29,
+  id:39,
   name:'oceandrink',
   description:'instant energy giver',
   price:900,
@@ -357,7 +365,7 @@ price:500,
 {
   image:'assets/images/oceandrink.webp',
   section:'drinks',
-  id:30,
+  id:40,
   name:'oceandrink',
   description:'instant energy giver',
   price:900,
