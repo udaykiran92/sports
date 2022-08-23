@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <section class="step-indicator">
+                <div class="step step1 active">
+                    <div class="step-icon"></div>
+                    <p>Login</p>
+                </div>
+                <div class="indicator-line active"></div>
+                <div class="step step2">
+                    <div class="step-icon"></div>
+                    <p>Shipping</p>
+                </div>
+                <div class="indicator-line "></div>
+                <div class="step step3">
+                    <div class="step-icon"></div>
+                    <p>Payment</p>
+                </div>
+                <div class="indicator-line "></div>
+                <div class="step step3">
+                    <div class="step-icon"></div>
+                    <p>Confirmation</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row" style="width: 30%;margin-top: 5%;margin-left: 20%;">
+        <img class="login-logo" src="../assets/image/nike-logo.jpg" alt="" style="width:60%;">
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="login">
+                <div class="login_container">
+                    <div class="login_form">
+                        <h1>login</h1>
+                        <form>
+                            <h5>Email</h5>
+                            <input type="email" formControllName="email">
+                            <h5>password</h5>
+                            <input type="password" formControllName="password">
+                            <p>By continuing, you agree to Nike Terms of Use and Privacy Policy.</p>
+                            <button class="login_signin_button" routerLink="/ship">login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="margin-left: 20px;">
+            <div class="login">
+                <div class="login_container">
+                    <div class="login_form">
+                        <form style=" height: 265px;padding-top: 120px;">
+                            <button class="login_signin_button" routerLink="/ship">Guest</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-5">
+            <div class="container">
+                <form>
+                    <div class="subtotal_home" *ngIf="shoppingCart.getCartLength()>0">
+                        <p>subtotal:({{shoppingCart.getCartLength()}} items)</p>
+                        <p><strong>${{shoppingCart.getTotal()}}</strong></p>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+    </div>
+</div>
