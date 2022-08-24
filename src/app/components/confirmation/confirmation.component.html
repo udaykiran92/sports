@@ -1,18 +1,29 @@
-<div>
-
-    <div class="hello" *ngFor="let item of products">
-        <table>
-        <tr *ngFor="let item of products; let i=index" >
-            <td>{{i+1}}</td>
-            <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td><img style="width: 25%;" src="{{item.image}}"alt=""></td>
-            <td style="width:25%;">{{item.description}}</td>
-            <td style="width: 12%;">{{item.section}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.quantity}}</td>
-            <td>{{item.price*item.quantity}}</td>
-        </tr>
-    </table>
-</div>
+<div class="consider">
+        <div class="hello">
+        <h1 style="text-align: center;">Thank you for shopping in sportsMART</h1>
+        &nbsp;
+        <h4>Your order is placed</h4>
+        <h5>Order details are:</h5>
+       <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let item of products; let i=index" >
+               <div class="col-md-2 card">
+                <p>Name of the item:{{item.name}}</p>&nbsp;
+              <div class="card-body">
+                <p>{{i+1}}</p> &nbsp;
+                <img src="{{item.image}}"alt="">&nbsp;
+               <p>Description:{{item.description}}</p> &nbsp;
+                <p>Type:{{item.section}}</p>&nbsp;
+                <p>Price:{{item.price}}</p>&nbsp;
+               <p>Quantity {{item.quantity}}</p>&nbsp;
+                <p>Total{{item.price*item.quantity}}</p>&nbsp;
+                </div>
+            </div>
+            </ng-container>
+            <strong>Grand Total:{{ grandTotal | currency :'INR'}}</strong>
+    <button type="btn btn-success" routerLink="/">Home</button>
+        </div>
+    </div>
+       </div>
+  
 </div>

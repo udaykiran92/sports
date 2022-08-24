@@ -41,6 +41,7 @@
   background-color: rgba(219, 235, 219, 0.322);
 }
 .container-fluid {
-  background-image: url("/sports/src/assets/images/bgm.webp");
+  /* background-image: url("src/assets/images/bgm.webp"); */
   background-repeat: no-repeat;
+
 } 

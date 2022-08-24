@@ -52,6 +52,8 @@ dec(item:any) {
 item.quantity-=1;
 }
 
+
+
 }
 
 
@@ -87,16 +89,16 @@ item.quantity-=1;
     {
       
       image: "../image/punchbag.jpg",
-      section: 'wrist',
-      id: 7,
+      section: 'gym',
+      id: 4,
       name: 'punchbag',
       desc: 'Good for wrestlers and boxers',
       price: '1200',
     },
        {
     image: "../image/row-machine.jpg",
-    section: 'Full-body',
-    id: 8,
+    section: 'gym',
+    id: 5,
     name: "Row-machine",
     desc: 'For hand-power and muscle power',
     price: '1200',
@@ -104,8 +106,8 @@ item.quantity-=1;
   {
       
     image: "../image/spinbike.jpg",
-    section: 'Full-body',
-    id: 9,
+    section: 'gym',
+    id: 6,
     name: "Spinbike",
     desc: "Boosts your stamina and cardio capacity",
     price: '1200',
@@ -114,8 +116,8 @@ item.quantity-=1;
     {
       
       image: "../image/elliptical.jpg",
-      section: 'Muscle',
-      id: 3,
+      section: 'gym',
+      id: 7,
       name: 'Ellipticals',
       desc: 'Boosts your stamina and cardio capacity.',
       price: '5000',
@@ -123,8 +125,26 @@ item.quantity-=1;
     {
       
       image: "../image/treadmill.jpg",
-      section: 'Full-body',
-      id: 10,
+      section: 'gym',
+      id: 8,
+      name: "Tredmill",
+      desc: "It's great for heart,lungs & builds power and endurance.",
+      price: '1200',
+    },
+    {
+      
+      image: "../image/treadmill.jpg",
+      section: 'gym',
+      id: 8,
+      name: "Tredmill",
+      desc: "It's great for heart,lungs & builds power and endurance.",
+      price: '1200',
+    },
+    {
+      
+      image: "../image/treadmill.jpg",
+      section: 'gym',
+      id: 8,
       name: "Tredmill",
       desc: "It's great for heart,lungs & builds power and endurance.",
       price: '1200',

@@ -24,24 +24,71 @@
             </section>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="shipping">
-                <div class="shipping_container">
-                    <div class="shipping_form">
-                        <h1>BillingAdress</h1>
-                        <form>
-                        <label>Doornumber</label>
-                        <input type="text" placeholder="doornumber please" name="Doornumber" required>
-                        <label>Street</label>
-                       <input type="text" name="Street"placeholder="Street name" required>
-                         <label>Telephone</label>
-                         <input type="tel" name="telephone"required>
-                         <label>Email</label>
-                         <input type="email" name="Email" placeholder="email please..." required>
-                            <button class="loginbutton" routerLink="/pay">Proceed to pay</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                <div class="container mt-5">
+                   <h1>BillingAdress</h1>
+                        <form [formGroup]="shipping" (ngSubmit)="submitproceed()">
+                            <div class="row">
+                                <div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="name"  class="form-control" placeholder="Name">
+                                     <div *ngIf="name.invalid && (name.touched  || name.dirty)">
+                                    <span class="error" *ngIf="name.errors?.required">*Name is Required</span>
+                                    <span class="error" *ngIf="name.errors?.pattern">*Enter only charecters</span>
+                                 </div> 
+                                </div>
+                                <div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="number"  class="form-control" placeholder=" DoorNumber">
+                                <div *ngIf=" number.invalid && ( number.touched  ||  number.dirty)">
+                                    <span class="error" *ngIf=" number.errors?.required">* DoorNumber is Required</span>
+                                    <span class="error" *ngIf=" number.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div>
+                                <div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="Street"  class="form-control" placeholder="Street">
+                                <div *ngIf="Street.invalid && (Street.touched  || Street.dirty)">
+                                    <span class="error" *ngIf="Street.errors?.required">*Street is Required</span>
+                                    <span class="error" *ngIf="Street.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="Village"  class="form-control" placeholder="Village">
+                                <div *ngIf="Village.invalid && (Village.touched  || Village.dirty)">
+                                    <span class="error" *ngIf="Village.errors?.required">*Village is Required</span>
+                                    <span class="error" *ngIf="Village.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="District"  class="form-control" placeholder="District">
+                                <div *ngIf="District.invalid && (District.touched  || District.dirty)">
+                                    <span class="error" *ngIf="District.errors?.required">*Name is Required</span>
+                                    <span class="error" *ngIf="District.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="State"  class="form-control" placeholder="State">
+                                <div *ngIf="State.invalid && (State.touched  || State.dirty)">
+                                    <span class="error" *ngIf="State.errors?.required">*Name is Required</span>
+                                    <span class="error" *ngIf="State.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="Country"  class="form-control" placeholder="Country">
+                                <div *ngIf="Country.invalid && (Country.touched  || Country.dirty)">
+                                    <span class="error" *ngIf="Country.errors?.required">*Country is Required</span>
+                                    <span class="error" *ngIf="Country.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="mobileNumber"  class="form-control" placeholder="phone">
+                                <div *ngIf="mobileNumber.invalid && (mobileNumber.touched ||mobileNumber.dirty)">
+                                    <span class="error" *ngIf="mobileNumber.errors?.required">*phone is Required</span>
+                                    <span class="error" *ngIf="mobileNumber.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div><div class=" mt-2 mb-2 col-lg-6 col-6">
+                                    <input type="text"  formControlName="pincode"  class="form-control" placeholder="pincode">
+                                <div *ngIf="pincode.invalid && (pincode.touched  || pincode.dirty)">
+                                    <span class="error" *ngIf="pincode.errors?.required">*pincode is Required</span>
+                                    <span class="error" *ngIf="pincode.errors?.pattern">*Enter only charecters</span>
+                                </div> 
+                                </div>
+                       
+        
+                   </div>
+                   <button class="loginbutton"  [disabled]="shipping.invalid" >Proceed to pay</button>
+
+                 </form>
         </div>

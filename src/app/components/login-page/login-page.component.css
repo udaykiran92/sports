@@ -1,0 +1,25 @@
+.content {
+    max-width: 500px;
+    /* margin:auto; */
+    background-color:aliceblue;
+    margin-bottom: 50%;
+    padding: 2% 2% 2% 2%;
+      text-align: center;
+    background-image: url("src/assets/images/color.webp");
+
+}
+button {
+    background-color: #000;
+    color: #fff;
+}
+button:hover {
+    color: #fff;
+}
+.error {
+    color:red;
+}
+.hello {
+    margin-left: 28%;
+    margin-top: 15%;
+
+}

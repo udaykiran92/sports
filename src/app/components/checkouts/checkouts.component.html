@@ -33,13 +33,36 @@
                 <div class="login_container">
                     <div class="login_form">
                         <h1>login</h1>
-                        <form>
-                            <h5>Email</h5>
-                            <input type="email" formControllName="email">
-                            <h5>password</h5>
-                            <input type="password" formControllName="password">
-                            <p>By continuing, you agree to Nike Terms of Use and Privacy Policy.</p>
-                            <button class="login_signin_button" routerLink="/ship">login</button>
+                        <form class="content" [formGroup]="Form" (ngSubmit)="submitData()"  >
+                            <div class="  mt-2 mb-2 col-lg-12 col-lg-12">
+                                <input type="text" formControlName="emailId" class="form-control" placeholder="Email Id">
+                             <div  *ngIf="emailId.invalid &&(emailId.touched || emailId.dirty)">
+                                <span class="error" *ngIf="emailId.errors?.required">*EmailId is required.</span>
+                                <span class="error" *ngIf="emailId.errors?.email">*Enter Valid email.</span>
+                                
+                             </div> 
+                            
+                            </div>
+                             <div class="  mt-2 mb-2  col-lg-12 col-12">
+                                <input type="text" formControlName="mobileNumber" class="form-control" placeholder="phone number">
+                             
+                                <div  *ngIf="mobileNumber.invalid &&(mobileNumber.touched || mobileNumber.dirty)">
+                                    <span class="error" *ngIf="mobileNumber.errors?.required">*mobileNumber is required.</span>
+                                    <span class="error" *ngIf="mobileNumber.errors?.pattern">*Enter Valid mobileNumber.</span>
+                                    
+                                 </div> 
+                                </div>
+                                <div class="  mt-2 mb-2  col-lg-12 col-12">
+                                    <input type="text" formControlName="PASSWORD" class="form-control" placeholder="password please">
+                                 
+                                    <div  *ngIf="PASSWORD.invalid &&(PASSWORD.touched || PASSWORD.dirty)">
+                                        <span class="error" *ngIf="PASSWORD.errors?.required">*PASSWORD is required.</span>
+                                        <span class="error" *ngIf="PASSWORD.errors?.pattern">*Enter Valid PASSWORD.</span>
+                                        
+                                     </div> 
+                                    </div>
+            
+                            <button class="loginbutton"  [disabled]="Form.invalid" routerLink="/ship">login</button>
                         </form>
                     </div>
                 </div>
@@ -50,21 +73,11 @@
                 <div class="login_container">
                     <div class="login_form">
                         <form style=" height: 265px;padding-top: 120px;">
-                            <button class="login_signin_button" routerLink="/ship">Guest</button>
+                            <button class="loginbutton" routerLink="/ship">Guest</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="col-md-5">
-            <div class="container">
-                <form>
-                    <div class="subtotal_home" *ngIf="shoppingCart.getCartLength()>0">
-                        <p>subtotal:({{shoppingCart.getCartLength()}} items)</p>
-                        <p><strong>${{shoppingCart.getTotal()}}</strong></p>
-                    </div>
-                </form>
-            </div>
-        </div> -->
     </div>
 </div>

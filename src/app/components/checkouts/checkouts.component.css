@@ -115,14 +115,13 @@ form >input{
     border-radius: 4px;
     width: 100%;
 }
-.login_signin_button{
-    background-color: antiquewhite;
+.loginbutton{
+  
     border: 1px solid;
     border-radius: 12px;
     width: 100%;
     height: 30px;
-    color: black;
-    border-color: #a88134 #9c7e31 #846a29;
+   
 }
 .login_create_button{
     border: 1px solid;
@@ -132,14 +131,4 @@ form >input{
     color: black;
     border-color: gray;
 
-}
-.subtotal_home{
-    align-items: center;
-    padding-top: 30%;
-    padding-left: 15%;
-    margin-top: 10%;
-    margin-left: 40%;
-    border: 1px solid black;
-    width: 50%;
-    height: 300px;
 }
