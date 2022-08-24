@@ -88,7 +88,7 @@ item.quantity-=1;
     },
     {
       
-      image: "../image/punchbag.jpg",
+      image: "assets/images/punchbag.jpg",
       section: 'gym',
       id: 4,
       name: 'punchbag',
@@ -96,7 +96,7 @@ item.quantity-=1;
       price: '1200',
     },
        {
-    image: "../image/row-machine.jpg",
+    image: "assets/images/row-machine.jpg",
     section: 'gym',
     id: 5,
     name: "Row-machine",
@@ -105,7 +105,7 @@ item.quantity-=1;
   },
   {
       
-    image: "../image/spinbike.jpg",
+    image: "assets/images/spinbike.jpg",
     section: 'gym',
     id: 6,
     name: "Spinbike",
@@ -115,7 +115,7 @@ item.quantity-=1;
 
     {
       
-      image: "../image/elliptical.jpg",
+      image: "assets/images/elliptical.jpg",
       section: 'gym',
       id: 7,
       name: 'Ellipticals',
@@ -124,7 +124,7 @@ item.quantity-=1;
     },
     {
       
-      image: "../image/treadmill.jpg",
+      image: "assets/images/treadmill.jpg",
       section: 'gym',
       id: 8,
       name: "Tredmill",
@@ -133,18 +133,18 @@ item.quantity-=1;
     },
     {
       
-      image: "../image/treadmill.jpg",
+      image: "assets/images/treadmill.jpg",
       section: 'gym',
-      id: 8,
+      id: 9,
       name: "Tredmill",
       desc: "It's great for heart,lungs & builds power and endurance.",
       price: '1200',
     },
     {
       
-      image: "../image/treadmill.jpg",
+      image: "assets/images/treadmill.jpg",
       section: 'gym',
-      id: 8,
+      id: 10,
       name: "Tredmill",
       desc: "It's great for heart,lungs & builds power and endurance.",
       price: '1200',
